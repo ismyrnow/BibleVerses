@@ -1,0 +1,90 @@
+body {
+	color: #333;
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+/* HEADER
+---------------------------------*/
+
+h1 {
+	text-align: center;
+	margin: .2em 0;
+	font-size: 1.4em;
+	font-weight: 300;
+	color: #aaa;
+}
+
+.top-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.top-right a {
+	line-height: 1.3em;
+	font-size: 1.8em;
+	font-weight: 700;
+	color: rgb(75, 156, 75);
+	padding: 0 .4em;
+	text-decoration: none;
+}
+
+
+/* BODY
+-------------------------*/
+
+.verses {
+	list-style-type: none;
+	margin: 0;
+	overflow-x: hidden;
+	padding: 1em;
+}
+
+.verse {
+	margin-bottom: 1em;
+}
+
+.verse .reference,
+.verse .text {
+	display: block;
+}
+
+.verse .reference {
+	font-size: 1.2em;
+}
+
+.verse .text {
+	color: #888;
+	font-size: .8em;
+	font-weight: 300;
+	white-space: nowrap;
+	-webkit-mask-image: -webkit-linear-gradient(right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 20%);
+}
+
+
+/* FOOTER
+-----------------------*/
+
+footer {
+	bottom: 1em;
+	position: fixed;
+	width: 100%;
+}
+
+footer nav {
+	text-align: center;
+}
+
+footer nav a {
+	color: rgb(75, 156, 75);
+	margin: 0 .2em;
+	padding: .25em .5em;
+	text-decoration: none;
+	font-weight: 300;
+}
+
+footer nav a.active {
+	border-bottom: 3px solid rgb(75, 156, 75);
+	font-weight: 700;
+}

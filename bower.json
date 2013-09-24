@@ -1,0 +1,10 @@
+{
+  "name": "Bible Verses",
+  "version": "0.1.0",
+  "dependencies": {
+    "normalize-css": "*",
+    "jquery": "~2.0",
+    "handlebars": "~1.0"
+  },
+  "private": true
+}
