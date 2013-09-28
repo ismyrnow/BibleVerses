@@ -4,7 +4,9 @@
   "dependencies": {
     "normalize-css": "*",
     "jquery": "~2.0",
-    "handlebars": "~1.0"
+    "handlebars": "~1.0",
+    "underscore": "1.5.2",
+    "backbone": "1.0.0"
   },
   "private": true
 }

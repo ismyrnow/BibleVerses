@@ -1,19 +1,21 @@
-/*global App DS Ember */
+/*global App */
 'use strict';
 
-App.Verse = DS.Model.extend({
-	book: DS.attr('string'),
-	chapter: DS.attr('number'),
-	verseStart: DS.attr('number'),
-	verseEnd: DS.attr('number'),
-	version: DS.attr('string'),
-	text: DS.attr('string'),
-	list: DS.attr('string'),
-	dateAdded: DS.attr('date'),
+var App = App || {};
 
-	verseDidChange: function () {
-		Ember.run.once(this, function () {
-			this.get('store').commit();
-		});
-	}.observes('book')
+App.Verse = Backbone.Model.extend({
+
+  defaults: function() {
+    return {};
+  }
+
 });
+
+// book: DS.attr('string'),
+// chapter: DS.attr('number'),
+// verseStart: DS.attr('number'),
+// verseEnd: DS.attr('number'),
+// version: DS.attr('string'),
+// text: DS.attr('string'),
+// list: DS.attr('string'),
+// dateAdded: DS.attr('date'),

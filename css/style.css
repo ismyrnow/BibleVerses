@@ -41,20 +41,20 @@ h1 {
 	padding: 1em;
 }
 
-.verse {
+.verses li {
 	margin-bottom: 1em;
 }
 
-.verse .reference,
-.verse .text {
+.verses li .reference,
+.verses li .text {
 	display: block;
 }
 
-.verse .reference {
+.verses li .reference {
 	font-size: 1.2em;
 }
 
-.verse .text {
+.verses li .text {
 	color: #888;
 	font-size: .8em;
 	font-weight: 300;
