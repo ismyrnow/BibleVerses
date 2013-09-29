@@ -2,7 +2,8 @@
 'use strict';
 
 var App = App || {};
+App.Models = App.Models || {};
 
-App.VerseListModel = Backbone.Model.extend({
+App.Models.VerseList = Backbone.Model.extend({
 
 });

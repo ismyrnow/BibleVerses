@@ -2,8 +2,9 @@
 'use strict';
 
 var App = App || {};
+App.Views = App.Views || {};
 
-App.VerseListItemView = Backbone.View.extend({
+App.Views.VerseListItem = Backbone.View.extend({
 
   tagName: 'li',
 

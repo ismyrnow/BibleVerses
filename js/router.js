@@ -34,9 +34,9 @@ App.Router = Backbone.Router.extend({
   },
 
   renderVerseList: function(title, list) {
-    var view = new App.VerseListView({
+    var view = new App.Views.VerseList({
       el: $('body'),
-      model: new App.VerseListModel({
+      model: new App.Models.VerseList({
         title: title,
         list: list
       })

@@ -2,22 +2,23 @@
 'use strict';
 
 var App = App || {};
+App.Views = App.Views || {};
 
-App.VerseListView = Backbone.View.extend({
+App.Views.VerseList = Backbone.View.extend({
 
   template: Handlebars.compile($('#verse-list').html()),
 
   initialize: function() {
 
   	this.list = this.model.attributes.list;
-  	this.verses = new App.VerseCollection;
+  	this.verses = new App.Collections.Verses;
     this.verses.fetch();
 
   },
 
   addOne: function(model) {
 
-    var view = new App.VerseListItemView({ model: model });
+    var view = new App.Views.VerseListItem({ model: model });
     this.$('.verses').append(view.render().el);
 
   },
