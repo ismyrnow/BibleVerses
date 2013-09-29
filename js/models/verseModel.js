@@ -3,11 +3,7 @@
 
 var App = App || {};
 
-App.Verse = Backbone.Model.extend({
-
-  defaults: function() {
-    return {};
-  }
+App.VerseModel = Backbone.Model.extend({
 
 });
 

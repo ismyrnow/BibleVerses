@@ -12,27 +12,29 @@
 </head>
 <body>
 
-  <header>
-    <h1>All Verses</h1>
-    <div class="top-right">
-      <a href="#">+</a>
+  <script type="text/x-handlebars" id="verse-list">
+    <header>
+      <h1>{{title}}</h1>
+      <div class="top-right">
+        <a href="#">+</a>
+      </div>
+    </header>
+
+    <div class="body">
+      <ul class="verses"></ul>
     </div>
-  </header>
 
-  <div class="body">
-    <ul class="verses"></ul>
-  </div>
+    <footer>
+      <nav>
+        <a href="#verses">All</a>
+        <a href="#verses/learning" data-list="learning">Learning</a>
+        <a href="#verses/memorized" data-list="memorized">Memorized</a>
+        <a href="#verses/saved" data-list="saved">Saved</a>
+      </nav>
+    </footer>
+  </script>
 
-  <footer>
-    <nav>
-      <a href="#" class="active">All</a>
-      <a href="#">Learning</a>
-      <a href="#">Memorized</a>
-      <a href="#">Saved</a>
-    </nav>
-  </footer>
-
-  <script type="text/x-handlebars" id="verse">
+  <script type="text/x-handlebars" id="verse-list-item">
     <span class="reference">{{book}} {{chapter}}:{{verseStart}}{{#if verseEnd}}-{{verseEnd}}{{/if}}</span>
     <span class="text">{{text}}</span>
   </script>
@@ -43,11 +45,15 @@
   <script src="bower_components/backbone/backbone.js"></script>
   <script src="bower_components/backbone/examples/backbone.localStorage.js"></script>
 
-  <script src="js/models/verse.js"></script>
-  <script src="js/collections/verses.js"></script>
-  <script src="js/views/verse-view.js"></script>
   <script src="js/fixtures.js"></script>
-  <script src="js/app.js"></script>
+
+  <script src="js/models/verseModel.js"></script>
+  <script src="js/models/verseListModel.js"></script>
+  <script src="js/collections/verseCollection.js"></script>
+  <script src="js/views/verseListItemView.js"></script>
+  <script src="js/views/verseListView.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
