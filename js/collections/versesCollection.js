@@ -1,13 +1,12 @@
-/*global App */
-'use strict';
+define(['backbone', 'models/versemodel', 'backbone-localStorage'], function (Backbone, VerseModel) {
+	'use strict';
 
-var App = App || {};
-App.Collections = App.Collections || {};
+	return Backbone.Collection.extend({
 
-App.Collections.Verses = Backbone.Collection.extend({
+	  model: VerseModel,
 
-  model: App.Models.Verse,
+	  localStorage: new Backbone.LocalStorage('bibleverses')
 
-  localStorage: new Backbone.LocalStorage('bibleverses')
+	});
 
 });

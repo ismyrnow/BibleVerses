@@ -1,9 +1,6 @@
-/*global App */
-'use strict';
+define(['backbone'], function (Backbone) {
+  'use strict';
 
-var App = App || {};
-App.Models = App.Models || {};
-
-App.Models.Verse = Backbone.Model.extend({
+  return Backbone.Model.extend({});
 
 });

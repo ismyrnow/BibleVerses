@@ -1,18 +1,17 @@
-/*global App */
-'use strict';
+define(['backbone', 'handlebars'], function (Backbone, Handlebars) {
+  'use strict';
 
-var App = App || {};
-App.Views = App.Views || {};
+  return Backbone.View.extend({
 
-App.Views.VerseListItem = Backbone.View.extend({
+	  tagName: 'li',
 
-  tagName: 'li',
+	  template: Handlebars.compile($('#verse-list-item').html()),
 
-  template: Handlebars.compile($('#verse-list-item').html()),
+	  render: function() {
+	    this.$el.html(this.template(this.model.toJSON()));
+	    return this;
+	  }
 
-  render: function() {
-    this.$el.html(this.template(this.model.toJSON()));
-    return this;
-  }
+	});
 
 });

@@ -1,7 +1,7 @@
-/*global localStorage */
-'use strict';
+define(['underscore'], function(_) {
+	'use strict';
 
-(function() {
+	var localStorage = window.localStorage;
 
 	var fixtures = [
 		{ id: '1', book: 'Deuteronomy', chapter: 7, verseStart: 9, version: 'NIV', text: 'Know therefore that the LORD your God is God; he is the faithful God, keeping his covenant of love to a thousand generations of those who love him and keep his commands.', list: 'memorized', dateAdded: '8/6/2013' },
@@ -15,4 +15,4 @@
 	}
 	localStorage.setItem('bibleverses', _.pluck(fixtures, 'id').join(','));
 
-})();
+});

@@ -1,63 +1,62 @@
-/*global App */
-'use strict';
+define(['backbone', 'handlebars', 'collections/versescollection', 'views/verselistitemview'], function (Backbone, Handlebars, VersesCollection, VerseListItemView) {
+  'use strict';
 
-var App = App || {};
-App.Views = App.Views || {};
+  return Backbone.View.extend({
 
-App.Views.VerseList = Backbone.View.extend({
+    template: Handlebars.compile($('#verse-list').html()),
 
-  template: Handlebars.compile($('#verse-list').html()),
+    initialize: function() {
 
-  initialize: function() {
+      this.list = this.model.attributes.list;
+      this.verses = new VersesCollection;
+      this.verses.fetch();
 
-  	this.list = this.model.attributes.list;
-  	this.verses = new App.Collections.Verses;
-    this.verses.fetch();
+    },
 
-  },
+    addOne: function(model) {
 
-  addOne: function(model) {
+      var view = new VerseListItemView({ model: model });
+      this.$('.verses').append(view.render().el);
 
-    var view = new App.Views.VerseListItem({ model: model });
-    this.$('.verses').append(view.render().el);
+    },
 
-  },
+    addAll: function() {
 
-  addAll: function() {
+      var verses = this.list ?
+        this.verses.where({ list: this.list }) :
+        this.verses.models;
 
-  	var verses = this.list ?
-  		this.verses.where({ list: this.list }) :
-  		this.verses.models;
+      _.each(verses, this.addOne, this);
 
-  	_.each(verses, this.addOne, this);
+    },
 
-  },
+    updateListNav: function() {
 
-  updateListNav: function() {
+      var list = this.list;
 
-  	var list = this.list;
+      if (!list) {
+        this.$('footer nav a:first-child').addClass('active');
+      }
 
-  	if (!list) {
-  		this.$('footer nav a:first-child').addClass('active');
-  	}
+      this.$('footer nav a').each(function(i, el) {
+        var $el = $(el);
+        if ($el.data('list') === list) {
+          $el.addClass('active');
+        }
+      });
 
-  	this.$('footer nav a').each(function(i, el) {
-  		var $el = $(el);
-  		if ($el.data('list') === list) {
-  			$el.addClass('active');
-			}
-  	});
+    },
 
-  },
+    render: function() {
 
-  render: function() {
+      this.$el.html(this.template(this.model.toJSON()));
+      this.addAll();
+      this.updateListNav();
 
-    this.$el.html(this.template(this.model.toJSON()));
-    this.addAll();
-    this.updateListNav();
+      return this;
 
-    return this;
+    }
 
-  }
+  });
 
 });
