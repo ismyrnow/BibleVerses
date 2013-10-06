@@ -4,11 +4,12 @@ require.config({
     'underscore' : '../bower_components/underscore/underscore',
     'backbone'   : '../bower_components/backbone/backbone',
     'backbone-localStorage' : '../bower_components/backbone/examples/backbone.localStorage',
+    'marionette' : '../bower_components/marionette/lib/backbone.marionette',
     'handlebars' : '../bower_components/handlebars/handlebars'
   },
   shim : {
     'handlebars' : {
-      exports: "Handlebars"
+      exports: 'Handlebars'
     },
     'underscore' : {
       exports : '_'
@@ -16,12 +17,16 @@ require.config({
     'backbone' : {
       exports : 'Backbone',
       deps : ['jquery','underscore']
+    },
+    'marionette' : {
+      exports : 'Backbone.Marionette',
+      deps : ['backbone']
     }
   },
-  deps : ['jquery','underscore']
+  deps : ['jquery','underscore', 'marionette-handlebars', 'fixtures']
 });
 
-require(['backbone', 'router', 'fixtures'], function(Backbone, Router) {
+require(['backbone', 'router'], function(Backbone, Router) {
   'use strict';
 
   new Router();
