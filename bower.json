@@ -2,9 +2,9 @@
   "name": "Bible Verses",
   "version": "0.1.0",
   "dependencies": {
-    "normalize-css": "*",
+    "normalize-css": "~2.1",
     "jquery": "~2.0",
-    "handlebars": "~1.0",
+    "handlebars": "1.0.0",
     "underscore": "1.5.2",
     "backbone": "1.0.0",
     "requirejs": "2.1.8",
