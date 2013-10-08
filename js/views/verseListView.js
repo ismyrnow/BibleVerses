@@ -1,9 +1,9 @@
-define(['backbone', 'handlebars', 'collections/versescollection', 'views/verselistitemview'], function (Backbone, Handlebars, VersesCollection, VerseListItemView) {
+define(['backbone', 'handlebars', 'collections/versescollection', 'views/verselistitemview', 'hbs!templates/verseList'], function (Backbone, Handlebars, VersesCollection, VerseListItemView, template) {
   'use strict';
 
   return Backbone.View.extend({
 
-    template: Handlebars.compile($('#verse-list').html()),
+    template: template,
 
     initialize: function() {
 

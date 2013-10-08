@@ -5,7 +5,9 @@ require.config({
     'backbone'   : '../bower_components/backbone/backbone',
     'backbone-localStorage' : '../bower_components/backbone/examples/backbone.localStorage',
     'marionette' : '../bower_components/marionette/lib/backbone.marionette',
-    'handlebars' : '../bower_components/handlebars/handlebars'
+    'handlebars' : '../bower_components/handlebars/handlebars',
+    'hbs'        : '../bower_components/requirejs-hbs/hbs',
+    'text'       : '../bower_components/requirejs-text/text'
   },
   shim : {
     'handlebars' : {

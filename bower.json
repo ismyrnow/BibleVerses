@@ -8,7 +8,9 @@
     "underscore": "1.5.2",
     "backbone": "1.0.0",
     "requirejs": "2.1.8",
-    "marionette": "1.1.0"
+    "marionette": "1.1.0",
+    "requirejs-hbs": "master",
+    "requirejs-text": "2.0.10"
   },
   "private": true
 }

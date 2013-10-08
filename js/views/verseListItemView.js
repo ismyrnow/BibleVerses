@@ -1,11 +1,11 @@
-define(['handlebars', 'marionette'], function (Handlebars, Marionette) {
+define(['handlebars', 'marionette', 'hbs!templates/verselistitem'], function (Handlebars, Marionette, template) {
   'use strict';
 
   return Marionette.ItemView.extend({
 
 	  tagName: 'li',
 
-	  template: Handlebars.compile($('#verse-list-item').html())
+	  template: template
 
 	});
 

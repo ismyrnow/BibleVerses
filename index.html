@@ -12,33 +12,6 @@
 </head>
 <body>
 
-  <script type="text/x-handlebars" id="verse-list">
-    <header>
-      <h1>{{title}}</h1>
-      <div class="top-right">
-        <a href="#">+</a>
-      </div>
-    </header>
-
-    <div class="body">
-      <ul class="verses"></ul>
-    </div>
-
-    <footer>
-      <nav>
-        <a href="#verses">All</a>
-        <a href="#verses/learning" data-list="learning">Learning</a>
-        <a href="#verses/memorized" data-list="memorized">Memorized</a>
-        <a href="#verses/saved" data-list="saved">Saved</a>
-      </nav>
-    </footer>
-  </script>
-
-  <script type="text/x-handlebars" id="verse-list-item">
-    <span class="reference">{{book}} {{chapter}}:{{verseStart}}{{#if verseEnd}}-{{verseEnd}}{{/if}}</span>
-    <span class="text">{{text}}</span>
-  </script>
-
   <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
 
 </body>
