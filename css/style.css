@@ -7,27 +7,40 @@ body {
 /* HEADER
 ---------------------------------*/
 
-h1 {
-	text-align: center;
-	margin: .2em 0;
-	font-size: 1.4em;
+header {
+	font-size: 1.2em;
 	font-weight: 300;
+}
+
+h1 {
+	font-size: inherit;
+	font-weight: inherit;
+	text-align: center;
+	margin: .4em 0;
 	color: #aaa;
 }
 
-.top-right {
+header .left,
+header .right {
 	position: absolute;
 	top: 0;
+	color: rgb(75, 156, 75);
+	text-decoration: none;
+	padding: .4em;
+}
+
+header .left {
+	left: 0;
+}
+
+header .right {
 	right: 0;
 }
 
-.top-right a {
-	line-height: 1.3em;
+header .right.add {
+	line-height: 1.15em;
 	font-size: 1.8em;
-	font-weight: 700;
-	color: rgb(75, 156, 75);
-	padding: 0 .4em;
-	text-decoration: none;
+	padding: 0 .3em;	
 }
 
 
@@ -60,6 +73,46 @@ h1 {
 	font-weight: 300;
 	white-space: nowrap;
 	-webkit-mask-image: -webkit-linear-gradient(right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 20%);
+}
+
+.verses li a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.body.verse {
+	padding: 1em;
+}
+
+input {
+	display: block;
+	position: relative;
+	width: 90.6%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-weight: 300;
+	border-radius: 0;
+	box-shadow: none;
+	padding: 6px 0;
+	background-color: transparent;
+	-webkit-tap-highlight-color: transparent;
+	background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%, transparent 50%);
+	background-size: 100% 1px;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	border: 0;
+	border-bottom: 1px dotted#eee;
+	margin: 0 4.7% .4em;
+	outline: 0;
+}
+
+select {
+	display: block;
+	width: 90.6%;
+	margin: 0 4.7% .4em;
+	outline: 0;
+	border-color: #eee;
 }
 
 

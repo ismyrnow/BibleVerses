@@ -1,4 +1,6 @@
-define(['backbone', 'views/verselistview', 'models/verselistmodel'], function (Backbone, VerseListView, VerseListModel) {
+define(['backbone', 'views/verselistview', 'models/verselistmodel', 'collections/versescollection', 'views/verseview',
+  'views/newverseview'],
+function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, NewVerseView) {
   'use strict';
 
   return Backbone.Router.extend({
@@ -8,7 +10,8 @@ define(['backbone', 'views/verselistview', 'models/verselistmodel'], function (B
       'verses/learning':      'learningVerses',
       'verses/memorized':     'memorizedVerses',
       'verses/saved':         'savedVerses',
-
+      'verse/new':            'newVerse',
+      'verse/:id':            'verse',
       '.*':                   'index'
     },
 
@@ -34,13 +37,29 @@ define(['backbone', 'views/verselistview', 'models/verselistmodel'], function (B
 
     renderVerseList: function(title, list) {
       var view = new VerseListView({
-        el: $('body'),
         model: new VerseListModel({
           title: title,
           list: list
         })
       });
 
+      view.render();
+    },
+
+    verse: function(id) {
+      var collection = new VersesCollection;
+      collection.fetch();
+      var model = collection.get(id);
+      var view = new VerseView({
+        el: $('body'),
+        model: model
+      });
+
+      view.render();
+    },
+
+    newVerse: function() {
+      var view = new NewVerseView();
       view.render();
     }
 
