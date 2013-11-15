@@ -28,10 +28,18 @@ require.config({
   deps : ['jquery','underscore', 'marionette-handlebars', 'fixtures']
 });
 
-require(['backbone', 'router'], function(Backbone, Router) {
+require(['backbone', 'router', 'collections/versescollection'],
+function(Backbone, Router, VersesCollection) {
   'use strict';
 
-  new Router();
+  // Bootstrap verses collection and put it on the App namespace.
+  window.App = {};
+  App.Verses = new VersesCollection();
+  App.Verses.fetch({
+    success: function() {
+      new Router();
+      Backbone.history.start();
+    }
+  });
 
-  Backbone.history.start();
 });

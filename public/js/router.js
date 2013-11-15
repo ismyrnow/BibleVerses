@@ -47,9 +47,7 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
     },
 
     verse: function(id) {
-      var collection = new VersesCollection;
-      collection.fetch();
-      var model = collection.get(id);
+      var model = App.Verses.get(id);
       var view = new VerseView({
         el: $('body'),
         model: model

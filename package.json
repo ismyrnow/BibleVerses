@@ -1,0 +1,25 @@
+{
+  "name": "BibleVerses",
+  "version": "0.1.0",
+  "description": "Bible memory verse app.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~3.4.4",
+    "request": "~2.27.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-express-server": "~0.4.5",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": "",
+  "author": "@ismyrnow",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "149b29d0a29b65cfecafc382f9645a52a4826d39",
+  "private": true
+}
