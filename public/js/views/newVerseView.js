@@ -19,15 +19,10 @@ function (Handlebars, Marionette, template) {
       var list = $('select[name=list]').val();
 
       this.ajaxGetPassage(reference, version).then(function(result) {
-        var passage = result.response.search.result.passages[0];
-        var reference = passage.display;
-        var text = self.cleanPassageText(passage.text);
-        var version = passage.version_abbreviation;
-
         var verseModel = {
-          reference: reference,
-          text: text,
-          version: version,
+          reference: result.reference,
+          text: result.text,
+          version: result.version,
           list: list,
           dateAdded: Date.now()
         };
@@ -36,10 +31,6 @@ function (Handlebars, Marionette, template) {
         window.location.hash = "#";
 
       });
-    },
-
-    cleanPassageText: function(html) {
-      return $(html).find(':not(.s1, sup)').text();
     },
 
     ajaxGetPassage: function(reference, version) {
