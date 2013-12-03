@@ -25,7 +25,7 @@ require.config({
       deps : ['backbone']
     }
   },
-  deps : ['jquery','underscore', 'marionette-handlebars', 'fixtures']
+  deps : ['jquery','underscore', 'marionette-handlebars']
 });
 
 require(['backbone', 'router', 'collections/versescollection'],

@@ -6,6 +6,7 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
   return Backbone.Router.extend({
 
     routes: {
+      'reset':                'reset',
       'verses':               'allVerses',
       'verses/learning':      'learningVerses',
       'verses/memorized':     'memorizedVerses',
@@ -59,6 +60,12 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
     newVerse: function() {
       var view = new NewVerseView();
       view.render();
+    },
+
+    reset: function() {
+      require(['fixtures'], function() {
+        window.location.href = '/';
+      });
     }
 
   });
