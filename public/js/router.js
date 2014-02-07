@@ -10,7 +10,6 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
       'verses':               'allVerses',
       'verses/learning':      'learningVerses',
       'verses/memorized':     'memorizedVerses',
-      'verses/saved':         'savedVerses',
       'verse/new':            'newVerse',
       'verse/:id':            'verse',
       '.*':                   'index'
@@ -30,10 +29,6 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
 
     memorizedVerses: function() {
       this.renderVerseList('Memorized Verses', 'memorized');
-    },
-
-    savedVerses: function() {
-      this.renderVerseList('Saved Verses', 'saved');
     },
 
     renderVerseList: function(title, list) {
