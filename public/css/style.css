@@ -1,6 +1,15 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
 	color: #333;
 	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	color: rgb(75,156,75);
+	text-decoration: none;
 }
 
 
@@ -24,8 +33,6 @@ header .left,
 header .right {
 	position: absolute;
 	top: 0;
-	color: rgb(75, 156, 75);
-	text-decoration: none;
 	padding: .4em;
 }
 
@@ -81,32 +88,37 @@ header .right {
 input {
 	display: block;
 	position: relative;
-	width: 90.6%;
+	width: 100%;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	font-weight: 300;
 	border-radius: 0;
 	box-shadow: none;
-	padding: 6px 0;
+	padding: 5px 6px;
 	background-color: transparent;
 	-webkit-tap-highlight-color: transparent;
 	background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%, transparent 50%);
 	background-size: 100% 1px;
 	background-repeat: no-repeat;
 	background-position: bottom;
-	border: 0;
-	border-bottom: 1px dotted#eee;
-	margin: 0 4.7% .4em;
+	border: 1px solid #eee;
+	margin: 0 0 .4em;
 	outline: 0;
 }
 
 select {
 	display: block;
-	width: 90.6%;
-	margin: 0 4.7% .4em;
+	width: 100%;
+	margin: 0 0 .4em;
 	outline: 0;
 	border-color: #eee;
+	padding: 4px 2px;
+	font-weight: 300;
+}
+
+.new-verse {
+	padding: 1em;
 }
 
 
@@ -124,10 +136,8 @@ footer nav {
 }
 
 footer nav a {
-	color: rgb(75, 156, 75);
 	margin: 0 .2em;
 	padding: .25em .5em;
-	text-decoration: none;
 	font-weight: 300;
 }
 
