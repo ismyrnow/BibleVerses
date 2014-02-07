@@ -1,35 +1,47 @@
-define(['handlebars', 'marionette', 'hbs!templates/newVerse'],
-function (Handlebars, Marionette, template) {
+define(['handlebars', 'marionette', 'hbs!templates/newVerse', 'debounce'],
+function (Handlebars, Marionette, template, debounce) {
   'use strict';
 
   return Marionette.ItemView.extend({
+
+    initialize: function() {
+      this.referenceChangedDebounced = debounce(this.referenceChanged, 1000);
+    },
     
     el: $('body'),
 
     template: template,
 
     events: {
-      'click #save-verse': 'saveVerse'
+      'click #save-verse': 'saveVerse',
+      'keyup [name=reference]': 'referenceChangedDebounced'
     },
 
     saveVerse: function() {
-      var self = this;
       var reference = $('input[name=reference]').val();
       var version = $('select[name=version]').val();
       var list = $('select[name=list]').val();
+      var text = $('textarea[name=text').val();
+
+      var verseModel = {
+        reference: reference,
+        text: text,
+        version: version,
+        list: list,
+        dateAdded: Date.now()
+      };
+
+      App.Verses.create(verseModel);
+      window.location.hash = "#";
+    },
+
+    referenceChanged: function() {
+      // TODO: check to see if reference looks legit
+      var reference = $('input[name=reference]').val();
+      var version = $('select[name=version]').val();
 
       this.ajaxGetPassage(reference, version).then(function(result) {
-        var verseModel = {
-          reference: result.reference,
-          text: result.text,
-          version: result.version,
-          list: list,
-          dateAdded: Date.now()
-        };
-
-        App.Verses.create(verseModel);
-        window.location.hash = "#";
-
+        $('textarea[name=text]').val(result.text);
       });
     },
 

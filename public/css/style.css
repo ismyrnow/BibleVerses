@@ -85,7 +85,7 @@ header .right {
 	padding: 1em;
 }
 
-input {
+input, textarea {
 	display: block;
 	position: relative;
 	width: 100%;
@@ -105,6 +105,10 @@ input {
 	border: 1px solid #eee;
 	margin: 0 0 .4em;
 	outline: 0;
+}
+
+textarea {
+	border-width: 1px;
 }
 
 select {
