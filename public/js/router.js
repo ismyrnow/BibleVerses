@@ -16,7 +16,7 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
     },
 
     index: function() {
-      this.navigate('verses', true);
+      this.navigate('verses/learning', true);
     },
 
     allVerses: function() {

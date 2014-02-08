@@ -37,7 +37,7 @@ define(['backbone', 'handlebars', 'collections/versescollection', 'views/verseli
       var list = this.list;
 
       if (!list) {
-        this.$('footer nav a:first-child').addClass('active');
+        this.$('footer nav a:not([data-list])').addClass('active');
       }
 
       this.$('footer nav a').each(function(i, el) {
