@@ -1,0 +1,23 @@
+<header>
+  <a class="left" href="#verse/{{id}}">
+    Cancel
+  </a>
+  <h1>New Verse</h1>
+  <a class="right" id="save-verse" href="javascript:void(0)">
+    Save
+  </a>
+</header>
+
+<div class="body edit-verse">
+	<input type="text" name="reference" placeholder="Reference" value="{{reference}}" />
+  <select name="version">
+    <option value="esv">ESV</option>
+  </select>
+  <select name="list">
+    {{#select list}}
+  	<option value="learning">Learning</option>
+  	<option value="memorized">Memorized</option>
+    {{/select}}
+  </select>
+  <textarea name="text" rows="7">{{text}}</textarea>
+</div>

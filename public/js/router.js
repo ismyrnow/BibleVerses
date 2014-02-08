@@ -1,6 +1,6 @@
 define(['backbone', 'views/verselistview', 'models/verselistmodel', 'collections/versescollection', 'views/verseview',
-  'views/newverseview'],
-function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, NewVerseView) {
+  'views/newverseview', 'views/editverseview'],
+function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, NewVerseView, EditVerseView) {
   'use strict';
 
   return Backbone.Router.extend({
@@ -12,6 +12,7 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
       'verses/memorized':     'memorizedVerses',
       'verse/new':            'newVerse',
       'verse/:id':            'verse',
+      'verse/edit/:id':       'editVerse',
       '.*':                   'index'
     },
 
@@ -54,6 +55,16 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
 
     newVerse: function() {
       var view = new NewVerseView();
+      view.render();
+    },
+
+    editVerse: function(id) {
+      var model = App.Verses.get(id);
+      var view = new EditVerseView({
+        el: $('body'),
+        model: model
+      });
+
       view.render();
     },
 

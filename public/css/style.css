@@ -121,7 +121,8 @@ select {
 	font-weight: 300;
 }
 
-.new-verse {
+.new-verse,
+.edit-verse {
 	padding: 1em;
 }
 
