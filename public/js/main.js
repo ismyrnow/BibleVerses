@@ -28,12 +28,17 @@ require.config({
   deps : ['jquery','underscore', 'marionette-handlebars']
 });
 
-require(['backbone', 'router', 'collections/versescollection'],
-function(Backbone, Router, VersesCollection) {
+require(['backbone', 'marionette', 'router', 'collections/versescollection'],
+function(Backbone, Marionette, Router, VersesCollection) {
   'use strict';
 
+  window.App = new Marionette.Application();
+
+  App.addRegions({
+    mainRegion: 'body'
+  });
+
   // Bootstrap verses collection and put it on the App namespace.
-  window.App = {};
   App.Verses = new VersesCollection();
   App.Verses.fetch({
     success: function() {

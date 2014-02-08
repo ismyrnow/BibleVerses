@@ -7,8 +7,6 @@ function (Handlebars, Marionette, template, debounce) {
     initialize: function() {
       this.referenceChangedDebounced = debounce(this.referenceChanged, 1000);
     },
-    
-    el: $('body'),
 
     template: template,
 

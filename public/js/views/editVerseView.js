@@ -8,8 +8,6 @@ function (Handlebars, Marionette, template, debounce) {
       this.referenceChangedDebounced = debounce(this.referenceChanged, 1000);
       window.Handlebars.registerHelper('select', this.selectHelper);
     },
-    
-    el: $('body'),
 
     template: template,
 
@@ -65,7 +63,9 @@ function (Handlebars, Marionette, template, debounce) {
       var $el = $('<select />').html(options.fn(this));
       $el.find('[value=' + value + ']').attr({'selected':'selected'});
       return $el.html();
-    }
+    },
+
+    onClose: function() { console.log("closing view")}
 
   });
 

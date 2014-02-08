@@ -2,8 +2,6 @@ define(['backbone', 'handlebars', 'collections/versescollection', 'views/verseli
   'use strict';
 
   return Backbone.View.extend({
-    
-    el: $('body'),
 
     template: template,
 

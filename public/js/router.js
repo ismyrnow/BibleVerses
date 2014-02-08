@@ -40,32 +40,30 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
         })
       });
 
-      view.render();
+      App.mainRegion.show(view);
     },
 
     verse: function(id) {
       var model = App.Verses.get(id);
       var view = new VerseView({
-        el: $('body'),
         model: model
       });
 
-      view.render();
+      App.mainRegion.show(view);
     },
 
     newVerse: function() {
       var view = new NewVerseView();
-      view.render();
+      App.mainRegion.show(view);
     },
 
     editVerse: function(id) {
       var model = App.Verses.get(id);
       var view = new EditVerseView({
-        el: $('body'),
         model: model
       });
 
-      view.render();
+      App.mainRegion.show(view);
     },
 
     reset: function() {
