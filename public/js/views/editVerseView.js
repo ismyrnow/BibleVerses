@@ -15,6 +15,7 @@ function (Handlebars, Marionette, template, debounce) {
 
     events: {
       'click #save-verse': 'saveVerse',
+      'click #delete-verse': 'deleteVerse',
       'keyup [name=reference]': 'referenceChangedDebounced'
     },
 
@@ -24,15 +25,18 @@ function (Handlebars, Marionette, template, debounce) {
       var list = $('select[name=list]').val();
       var text = $('textarea[name=text').val();
 
-      var verseModel = App.Verses.get(this.model.id);
-
-      verseModel.save({
+      this.model.save({
         reference: reference,
         text: text,
         version: version,
         list: list
       });
 
+      window.location.hash = "#";
+    },
+
+    deleteVerse: function() {
+      this.model.destroy();
       window.location.hash = "#";
     },
 

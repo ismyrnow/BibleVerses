@@ -126,6 +126,10 @@ select {
 	padding: 1em;
 }
 
+#delete-verse {
+	color: rgb(231, 75, 75);
+}
+
 
 /* FOOTER
 -----------------------*/
