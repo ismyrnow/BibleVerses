@@ -1,5 +1,5 @@
-define(['backbone', 'views/verselistview', 'models/verselistmodel', 'collections/versescollection', 'views/verseview',
-  'views/newverseview', 'views/editverseview'],
+define(['backbone', 'views/verse-list-view', 'models/verse-list-model', 'collections/verses-collection', 'views/verse-view',
+  'views/new-verse-view', 'views/edit-verse-view'],
 function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, NewVerseView, EditVerseView) {
   'use strict';
 

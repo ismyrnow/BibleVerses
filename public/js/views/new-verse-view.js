@@ -1,4 +1,4 @@
-define(['handlebars', 'marionette', 'hbs!templates/newVerse', 'debounce'],
+define(['handlebars', 'marionette', 'hbs!templates/new-verse', 'debounce', 'backbone-touch'],
 function (Handlebars, Marionette, template, debounce) {
   'use strict';
 
@@ -19,7 +19,7 @@ function (Handlebars, Marionette, template, debounce) {
       var reference = $('input[name=reference]').val();
       var version = $('select[name=version]').val();
       var list = $('select[name=list]').val();
-      var text = $('textarea[name=text').val();
+      var text = $('textarea[name=text]').val();
 
       var verseModel = {
         reference: reference,
@@ -28,7 +28,7 @@ function (Handlebars, Marionette, template, debounce) {
         list: list,
         dateAdded: Date.now()
       };
-
+      
       App.Verses.create(verseModel);
       window.location.hash = "#";
     },

@@ -1,4 +1,4 @@
-define(['backbone', 'models/versemodel', 'backbone-localStorage'], function (Backbone, VerseModel) {
+define(['backbone', 'models/verse-model', 'backbone-localstorage'], function (Backbone, VerseModel) {
 	'use strict';
 
 	return Backbone.Collection.extend({

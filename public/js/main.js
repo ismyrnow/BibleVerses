@@ -3,7 +3,8 @@ require.config({
     'jquery'     : '../bower_components/jquery/jquery',
     'underscore' : '../bower_components/underscore/underscore',
     'backbone'   : '../bower_components/backbone/backbone',
-    'backbone-localStorage' : '../bower_components/backbone/examples/backbone.localStorage',
+    'backbone-localstorage' : '../bower_components/backbone.localStorage/backbone.localStorage',
+    'backbone-touch' : '../bower_components/backbone.touch/backbone.touch',
     'marionette' : '../bower_components/marionette/lib/backbone.marionette',
     'handlebars' : '../bower_components/handlebars/handlebars',
     'hbs'        : '../bower_components/requirejs-hbs/hbs',
@@ -28,7 +29,7 @@ require.config({
   deps : ['jquery','underscore', 'marionette-handlebars']
 });
 
-require(['backbone', 'marionette', 'router', 'collections/versescollection'],
+require(['backbone', 'marionette', 'router', 'collections/verses-collection'],
 function(Backbone, Marionette, Router, VersesCollection) {
   'use strict';
 

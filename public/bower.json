@@ -10,7 +10,10 @@
     "requirejs": "2.1.8",
     "marionette": "1.1.0",
     "requirejs-hbs": "master",
-    "requirejs-text": "2.0.10"
+    "requirejs-text": "2.0.10",
+    "open-sans-fontface": "~1.0.4",
+    "backbone.localStorage": "~1.1.7",
+    "backbone.touch": "~0.3.0"
   },
   "private": true
 }

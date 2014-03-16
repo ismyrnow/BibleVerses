@@ -8,6 +8,11 @@ var port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
 
+app.get("/offline.appcache", function(req, res){
+  res.contentType("text/cache-manifest");
+  res.end("CACHE MANIFEST");
+});
+
 app.get('/api/passage', function (req, res) {
 	var reference = req.query['reference'];
 	var version = req.query['version'].toUpperCase();

@@ -1,4 +1,4 @@
-define(['handlebars', 'marionette', 'hbs!templates/editVerse', 'debounce'],
+define(['handlebars', 'marionette', 'hbs!templates/edit-verse', 'debounce', 'backbone-touch'],
 function (Handlebars, Marionette, template, debounce) {
   'use strict';
 
@@ -21,7 +21,7 @@ function (Handlebars, Marionette, template, debounce) {
       var reference = $('input[name=reference]').val();
       var version = $('select[name=version]').val();
       var list = $('select[name=list]').val();
-      var text = $('textarea[name=text').val();
+      var text = $('textarea[name=text]').val();
 
       this.model.save({
         reference: reference,
