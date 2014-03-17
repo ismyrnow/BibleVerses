@@ -10,20 +10,16 @@
 
 <div class="body edit-verse">
   <input type="text" name="reference" placeholder="Reference" value="{{reference}}" />
-  <select name="version">
-    <option value="esv">ESV</option>
-  </select>
+  <input type="hidden" name="version" value="esv" />
   <select name="list">
     {{#select list}}
   	<option value="learning">Learning</option>
   	<option value="memorized">Memorized</option>
     {{/select}}
   </select>
-  <textarea name="text" rows="7">{{text}}</textarea>
-</div>
-
-<footer>
-  <nav>
+  <textarea name="text" rows="12">{{text}}</textarea>
+  
+  <div class="form-actions">
     <a href="javascript:void(0)" id="delete-verse">Delete</a>
-  </nav>
-</footer>
+  </div>
+</div>

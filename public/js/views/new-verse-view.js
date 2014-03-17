@@ -17,7 +17,7 @@ function (Handlebars, Marionette, template, debounce, $) {
 
     saveVerse: function () {
       var reference = this.$('input[name=reference]').val();
-      var version = this.$('select[name=version]').val();
+      var version = this.$('input[name=version]').val();
       var list = this.$('select[name=list]').val();
       var text = this.$('textarea[name=text]').val();
 
@@ -35,11 +35,12 @@ function (Handlebars, Marionette, template, debounce, $) {
 
     referenceChanged: function () {
       // TODO: check to see if reference looks legit
+      var self = this;
       var reference = this.$('input[name=reference]').val();
-      var version = this.$('select[name=version]').val();
+      var version = this.$('input[name=version]').val();
 
       this.ajaxGetPassage(reference, version).then(function (result) {
-        this.$('textarea[name=text]').val(result.text);
+        self.$('textarea[name=text]').val(result.text);
       });
     },
 
