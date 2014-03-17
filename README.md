@@ -1,6 +1,17 @@
-![Screenshot](http://i.imgur.com/AQ7wN9W.png)
+Bible memory verse app, which works offline.
+
+![Screenshot](screenshot.png)
+
+## Setup
+
+```
+npm install
+cd public
+bower install
+```
 
 ## Running
 
- - Run `grunt` from the command line.
- - Open `http://localhost:3000`.
+- Run `npm start` for server.
+- Run `grunt` for server and watch task.
+- Open `http://localhost:3000`.

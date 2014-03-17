@@ -35,7 +35,8 @@ header .left,
 header .right {
 	position: absolute;
 	top: 0;
-	padding: .4em;
+    padding: .4em .6em;
+    font-size: .9em;
 }
 
 header .left {
