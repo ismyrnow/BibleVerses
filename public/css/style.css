@@ -1,17 +1,17 @@
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	color: #333;
-	font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    line-height: 1.6em;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.6em;
 }
 
 a {
-	color: rgb(75,156,75);
-	text-decoration: none;
+  color: rgb(75,156,75);
+  text-decoration: none;
 }
 
 
@@ -19,32 +19,32 @@ a {
 ---------------------------------*/
 
 header {
-	font-size: 1.2em;
-	font-weight: 300;
+  font-size: 1.2em;
+  font-weight: 300;
 }
 
 h1 {
-	font-size: inherit;
-	font-weight: inherit;
-	text-align: center;
-	margin: .4em 0;
-	color: #aaa;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: center;
+  margin: .4em 0;
+  color: #aaa;
 }
 
 header .left,
 header .right {
-	position: absolute;
-	top: 0;
-    padding: .4em .6em;
-    font-size: .9em;
+  position: absolute;
+  top: 0;
+  padding: .4em .6em;
+  font-size: .9em;
 }
 
 header .left {
-	left: 0;
+  left: 0;
 }
 
 header .right {
-	right: 0;
+  right: 0;
 }
 
 
@@ -52,85 +52,85 @@ header .right {
 -------------------------*/
 
 .verses {
-	list-style-type: none;
-	margin: 0;
-	overflow-x: hidden;
-	padding: 1em;
+  list-style-type: none;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 1em;
 }
 
 .verses li {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .verses li .reference,
 .verses li .text {
-	display: block;
+  display: block;
 }
 
 .verses li .reference {
-	font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .verses li .text {
-	color: #888;
-	font-size: .8em;
-	font-weight: 300;
-	white-space: nowrap;
-	-webkit-mask-image: -webkit-linear-gradient(right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 20%);
+  color: #888;
+  font-size: .8em;
+  font-weight: 300;
+  white-space: nowrap;
+  -webkit-mask-image: -webkit-linear-gradient(right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 20%);
 }
 
 .verses li a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .body.verse {
-	padding: 1em;
+  padding: 1em;
 }
 
 input, textarea {
-	display: block;
-	position: relative;
-	width: 100%;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	font-weight: 300;
-	border-radius: 0;
-	box-shadow: none;
-	padding: 5px 6px;
-	background-color: transparent;
-	-webkit-tap-highlight-color: transparent;
-	background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%, transparent 50%);
-	background-size: 100% 1px;
-	background-repeat: no-repeat;
-	background-position: bottom;
-	border: 1px solid #eee;
-	margin: 0 0 .4em;
-	outline: 0;
+  display: block;
+  position: relative;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-weight: 300;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 5px 6px;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%, transparent 50%);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border: 1px solid #eee;
+  margin: 0 0 .4em;
+  outline: 0;
 }
 
 textarea {
-	border-width: 1px;
+  border-width: 1px;
 }
 
 select {
-	display: block;
-	width: 100%;
-	margin: 0 0 .4em;
-	outline: 0;
-	border-color: #eee;
-	padding: 4px 2px;
-	font-weight: 300;
+  display: block;
+  width: 100%;
+  margin: 0 0 .4em;
+  outline: 0;
+  border-color: #eee;
+  padding: 4px 2px;
+  font-weight: 300;
 }
 
 .new-verse,
 .edit-verse {
-	padding: 1em;
+  padding: 1em;
 }
 
 #delete-verse {
-	color: rgb(231, 75, 75);
+  color: rgb(231, 75, 75);
 }
 
 
@@ -138,22 +138,22 @@ select {
 -----------------------*/
 
 footer {
-	bottom: 1em;
-	position: fixed;
-	width: 100%;
+  bottom: 1em;
+  position: fixed;
+  width: 100%;
 }
 
 footer nav {
-	text-align: center;
+  text-align: center;
 }
 
 footer nav a {
-	margin: 0 .2em;
-	padding: .25em .5em;
-	font-weight: 300;
+  margin: 0 .2em;
+  padding: .25em .5em;
+  font-weight: 300;
 }
 
 footer nav a.active {
-	border-bottom: 3px solid rgb(75, 156, 75);
-	font-weight: 700;
+  border-bottom: 3px solid rgb(75, 156, 75);
+  font-weight: 700;
 }

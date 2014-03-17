@@ -1,10 +1,10 @@
-define(['handlebars', 'marionette', 'hbs!templates/new-verse', 'debounce', 'backbone-touch'],
-function (Handlebars, Marionette, template, debounce) {
+define(['handlebars', 'marionette', 'hbs!templates/new-verse', 'debounce', 'jquery', 'backbone-touch'],
+function (Handlebars, Marionette, template, debounce, $) {
   'use strict';
 
   return Marionette.ItemView.extend({
 
-    initialize: function() {
+    initialize: function () {
       this.referenceChangedDebounced = debounce(this.referenceChanged, 1000);
     },
 
@@ -15,11 +15,11 @@ function (Handlebars, Marionette, template, debounce) {
       'keyup [name=reference]': 'referenceChangedDebounced'
     },
 
-    saveVerse: function() {
-      var reference = $('input[name=reference]').val();
-      var version = $('select[name=version]').val();
-      var list = $('select[name=list]').val();
-      var text = $('textarea[name=text]').val();
+    saveVerse: function () {
+      var reference = this.$('input[name=reference]').val();
+      var version = this.$('select[name=version]').val();
+      var list = this.$('select[name=list]').val();
+      var text = this.$('textarea[name=text]').val();
 
       var verseModel = {
         reference: reference,
@@ -30,20 +30,20 @@ function (Handlebars, Marionette, template, debounce) {
       };
       
       App.Verses.create(verseModel);
-      window.location.hash = "#";
+      window.location.hash = '#';
     },
 
-    referenceChanged: function() {
+    referenceChanged: function () {
       // TODO: check to see if reference looks legit
-      var reference = $('input[name=reference]').val();
-      var version = $('select[name=version]').val();
+      var reference = this.$('input[name=reference]').val();
+      var version = this.$('select[name=version]').val();
 
-      this.ajaxGetPassage(reference, version).then(function(result) {
-        $('textarea[name=text]').val(result.text);
+      this.ajaxGetPassage(reference, version).then(function (result) {
+        this.$('textarea[name=text]').val(result.text);
       });
     },
 
-    ajaxGetPassage: function(reference, version) {
+    ajaxGetPassage: function (reference, version) {
       return $.ajax({
         url: 'api/passage',
         data: {

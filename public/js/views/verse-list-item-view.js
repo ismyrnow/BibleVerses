@@ -3,10 +3,10 @@ define(['handlebars', 'marionette', 'hbs!templates/verse-list-item'], function (
 
   return Marionette.ItemView.extend({
 
-	  tagName: 'li',
+    tagName: 'li',
 
-	  template: template
+    template: template
 
-	});
+  });
 
 });

@@ -1,26 +1,26 @@
-define(['backbone', 'handlebars', 'collections/verses-collection', 'views/verse-list-item-view', 'hbs!templates/verse-list'], function (Backbone, Handlebars, VersesCollection, VerseListItemView, template) {
+define(['backbone', 'handlebars', 'collections/verses-collection', 'views/verse-list-item-view', 'hbs!templates/verse-list', 'underscore', 'jquery'], function (Backbone, Handlebars, VersesCollection, VerseListItemView, template, _, $) {
   'use strict';
 
   return Backbone.View.extend({
 
     template: template,
 
-    initialize: function() {
+    initialize: function () {
 
       this.list = this.model.attributes.list;
-      this.verses = new VersesCollection;
+      this.verses = new VersesCollection();
       this.verses.fetch();
 
     },
 
-    addOne: function(model) {
+    addOne: function (model) {
 
       var view = new VerseListItemView({ model: model });
       this.$('.verses').append(view.render().el);
 
     },
 
-    addAll: function() {
+    addAll: function () {
 
       var verses = this.list ?
         this.verses.where({ list: this.list }) :
@@ -30,7 +30,7 @@ define(['backbone', 'handlebars', 'collections/verses-collection', 'views/verse-
 
     },
 
-    updateListNav: function() {
+    updateListNav: function () {
 
       var list = this.list;
 
@@ -38,7 +38,7 @@ define(['backbone', 'handlebars', 'collections/verses-collection', 'views/verse-
         this.$('footer nav a:not([data-list])').addClass('active');
       }
 
-      this.$('footer nav a').each(function(i, el) {
+      this.$('footer nav a').each(function (i, el) {
         var $el = $(el);
         if ($el.data('list') === list) {
           $el.addClass('active');
@@ -47,7 +47,7 @@ define(['backbone', 'handlebars', 'collections/verses-collection', 'views/verse-
 
     },
 
-    render: function() {
+    render: function () {
 
       this.$el.html(this.template(this.model.toJSON()));
       this.addAll();

@@ -1,3 +1,5 @@
+'use strict';
+
 require.config({
   paths : {
     'jquery'     : '../bower_components/jquery/jquery',
@@ -19,20 +21,18 @@ require.config({
     },
     'backbone' : {
       exports : 'Backbone',
-      deps : ['jquery','underscore']
+      deps : ['jquery', 'underscore']
     },
     'marionette' : {
       exports : 'Backbone.Marionette',
       deps : ['backbone']
     }
   },
-  deps : ['jquery','underscore', 'marionette-handlebars']
+  deps : ['jquery', 'underscore', 'marionette-handlebars']
 });
 
 require(['backbone', 'marionette', 'router', 'collections/verses-collection'],
-function(Backbone, Marionette, Router, VersesCollection) {
-  'use strict';
-
+function (Backbone, Marionette, Router, VersesCollection) {
   window.App = new Marionette.Application();
 
   App.addRegions({
@@ -42,7 +42,7 @@ function(Backbone, Marionette, Router, VersesCollection) {
   // Bootstrap verses collection and put it on the App namespace.
   App.Verses = new VersesCollection();
   App.Verses.fetch({
-    success: function() {
+    success: function () {
       new Router();
       Backbone.history.start();
     }

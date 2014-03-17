@@ -1,10 +1,10 @@
-define(['handlebars', 'marionette', 'hbs!templates/edit-verse', 'debounce', 'backbone-touch'],
-function (Handlebars, Marionette, template, debounce) {
+define(['handlebars', 'marionette', 'hbs!templates/edit-verse', 'debounce', 'jquery', 'backbone-touch'],
+function (Handlebars, Marionette, template, debounce, $) {
   'use strict';
 
   return Marionette.ItemView.extend({
 
-    initialize: function() {
+    initialize: function () {
       this.referenceChangedDebounced = debounce(this.referenceChanged, 1000);
       window.Handlebars.registerHelper('select', this.selectHelper);
     },
@@ -17,11 +17,11 @@ function (Handlebars, Marionette, template, debounce) {
       'keyup [name=reference]': 'referenceChangedDebounced'
     },
 
-    saveVerse: function() {
-      var reference = $('input[name=reference]').val();
-      var version = $('select[name=version]').val();
-      var list = $('select[name=list]').val();
-      var text = $('textarea[name=text]').val();
+    saveVerse: function () {
+      var reference = this.$('input[name=reference]').val();
+      var version = this.$('select[name=version]').val();
+      var list = this.$('select[name=list]').val();
+      var text = this.$('textarea[name=text]').val();
 
       this.model.save({
         reference: reference,
@@ -30,25 +30,25 @@ function (Handlebars, Marionette, template, debounce) {
         list: list
       });
 
-      window.location.hash = "#";
+      window.location.hash = '#';
     },
 
-    deleteVerse: function() {
+    deleteVerse: function () {
       this.model.destroy();
-      window.location.hash = "#";
+      window.location.hash = '#';
     },
 
-    referenceChanged: function() {
+    referenceChanged: function () {
       // TODO: check to see if reference looks legit
-      var reference = $('input[name=reference]').val();
-      var version = $('select[name=version]').val();
+      var reference = this.$('input[name=reference]').val();
+      var version = this.$('select[name=version]').val();
 
-      this.ajaxGetPassage(reference, version).then(function(result) {
-        $('textarea[name=text]').val(result.text);
+      this.ajaxGetPassage(reference, version).then(function (result) {
+        this.$('textarea[name=text]').val(result.text);
       });
     },
 
-    ajaxGetPassage: function(reference, version) {
+    ajaxGetPassage: function (reference, version) {
       return $.ajax({
         url: 'api/passage',
         data: {
@@ -59,13 +59,13 @@ function (Handlebars, Marionette, template, debounce) {
       }).promise();
     },
 
-    selectHelper: function(value, options) {
+    selectHelper: function (value, options) {
       var $el = $('<select />').html(options.fn(this));
-      $el.find('[value=' + value + ']').attr({'selected':'selected'});
+      $el.find('[value=' + value + ']').attr({'selected': 'selected'});
       return $el.html();
     },
 
-    onClose: function() { console.log("closing view")}
+    onClose: function () { console.log('closing view'); }
 
   });
 

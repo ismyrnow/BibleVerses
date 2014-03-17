@@ -1,12 +1,12 @@
 define(['backbone', 'models/verse-model', 'backbone-localstorage'], function (Backbone, VerseModel) {
-	'use strict';
+  'use strict';
 
-	return Backbone.Collection.extend({
+  return Backbone.Collection.extend({
 
-	  model: VerseModel,
+    model: VerseModel,
 
-	  localStorage: new Backbone.LocalStorage('bibleverses')
+    localStorage: new Backbone.LocalStorage('bibleverses')
 
-	});
+  });
 
 });

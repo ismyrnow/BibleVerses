@@ -16,23 +16,23 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
       '.*':                   'index'
     },
 
-    index: function() {
+    index: function () {
       this.navigate('verses/learning', true);
     },
 
-    allVerses: function() {
+    allVerses: function () {
       this.renderVerseList('All Verses', null);
     },
 
-    learningVerses: function() {
+    learningVerses: function () {
       this.renderVerseList('Learning Verses', 'learning');
     },
 
-    memorizedVerses: function() {
+    memorizedVerses: function () {
       this.renderVerseList('Memorized Verses', 'memorized');
     },
 
-    renderVerseList: function(title, list) {
+    renderVerseList: function (title, list) {
       var view = new VerseListView({
         model: new VerseListModel({
           title: title,
@@ -43,7 +43,7 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
       App.mainRegion.show(view);
     },
 
-    verse: function(id) {
+    verse: function (id) {
       var model = App.Verses.get(id);
       var view = new VerseView({
         model: model
@@ -52,12 +52,12 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
       App.mainRegion.show(view);
     },
 
-    newVerse: function() {
+    newVerse: function () {
       var view = new NewVerseView();
       App.mainRegion.show(view);
     },
 
-    editVerse: function(id) {
+    editVerse: function (id) {
       var model = App.Verses.get(id);
       var view = new EditVerseView({
         model: model
@@ -66,8 +66,8 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
       App.mainRegion.show(view);
     },
 
-    reset: function() {
-      require(['fixtures'], function() {
+    reset: function () {
+      require(['fixtures'], function () {
         window.location.href = '/';
       });
     }
