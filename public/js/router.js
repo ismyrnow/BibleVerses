@@ -21,21 +21,20 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
     },
 
     allVerses: function () {
-      this.renderVerseList('All Verses', null);
+      this.renderVerseList();
     },
 
     learningVerses: function () {
-      this.renderVerseList('Learning Verses', 'learning');
+      this.renderVerseList('learning');
     },
 
     memorizedVerses: function () {
-      this.renderVerseList('Memorized Verses', 'memorized');
+      this.renderVerseList('memorized');
     },
 
-    renderVerseList: function (title, list) {
+    renderVerseList: function (list) {
       var view = new VerseListView({
         model: new VerseListModel({
-          title: title,
           list: list
         })
       });
