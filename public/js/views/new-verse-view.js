@@ -1,4 +1,4 @@
-define(['handlebars', 'marionette', 'hbs!templates/new-verse', 'debounce', 'jquery', 'backbone-touch'],
+define(['handlebars', 'marionette', 'hbs!templates/new-verse', 'infrastructure/debounce', 'jquery', 'backbone-touch'],
 function (Handlebars, Marionette, template, debounce, $) {
   'use strict';
 
