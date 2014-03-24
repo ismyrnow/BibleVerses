@@ -66,7 +66,14 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
     },
 
     reset: function () {
-      require(['fixtures'], function () {
+      var srsly = window.confirm('Are you sure you want to reset your verses?');
+
+      if (!srsly) {
+        window.location.href = '/';
+        return;
+      }
+
+      require(['infrastructure/fixtures'], function () {
         window.location.href = '/';
       });
     }
