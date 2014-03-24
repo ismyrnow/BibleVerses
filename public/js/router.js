@@ -16,8 +16,16 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
       '.*':                   'index'
     },
 
+    initialize: function () {
+      this.listenTo(Backbone, 'page-transition', this.pageTransition);
+    },
+
+    pageTransition: function (fragment, options) {
+      this.navigate(fragment, options);
+    },
+
     index: function () {
-      this.navigate('verses/learning', true);
+      this.navigate('verses/learning', { trigger: true, replace: true });
     },
 
     allVerses: function () {

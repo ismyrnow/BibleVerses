@@ -5,12 +5,27 @@ define(['backbone', 'handlebars', 'collections/verses-collection', 'views/verse-
 
     template: template,
 
+    events: {
+      'click footer a': 'changeList'
+    },
+
     initialize: function () {
 
       this.list = this.model.attributes.list;
       this.verses = new VersesCollection();
       this.verses.fetch();
 
+    },
+
+    changeList: function (e) {
+      e.preventDefault();
+      var href = $(e.currentTarget).attr('href').substring(1);
+
+      Backbone.trigger('page-transition', href, {
+        trigger: true,
+        replace: true,
+        transition: false
+      });
     },
 
     addOne: function (model) {
