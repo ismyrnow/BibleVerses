@@ -15,3 +15,10 @@ bower install
 - Run `npm start` for server.
 - Run `grunt` for server and watch task.
 - Open `http://localhost:3000`.
+
+## Deploying
+
+```
+git push heroku master
+heroku open
+```
