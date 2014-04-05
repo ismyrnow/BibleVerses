@@ -28,7 +28,7 @@ h1 {
   font-size: inherit;
   font-weight: inherit;
   text-align: center;
-  margin: 13px 0;
+  margin: 10px 0 13px;
   color: #aaa;
 }
 
@@ -36,7 +36,7 @@ header .left,
 header .right {
   position: absolute;
   top: 0;
-  padding: 13px;
+  padding: 10px 13px;
 }
 
 header .left {
@@ -169,7 +169,7 @@ select {
 -----------------------*/
 
 footer {
-  bottom: 13px;
+  bottom: 16px;
   position: fixed;
   width: 100%;
 }
