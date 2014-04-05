@@ -4,12 +4,11 @@ CACHE MANIFEST
 CACHE:
 index.html
 css/style.css
-js/debounce.js
-js/fixtures.js
-js/main.js
-js/marionette-handlebars.js
-js/router.js
 js/collections/verses-collection.js
+js/infrastructure/debounce.js
+js/infrastructure/fixtures.js
+js/infrastructure/marionette-handlebars.js
+js/infrastructure/marionette-transitions.js
 js/models/verse-list-model.js
 js/models/verse-model.js
 js/templates/edit-verse.hbs
@@ -22,6 +21,8 @@ js/views/new-verse-view.js
 js/views/verse-list-item-view.js
 js/views/verse-list-view.js
 js/views/verse-view.js
+js/main.js
+js/router.js
 
 # Bower Components
 bower_components/requirejs/require.js
