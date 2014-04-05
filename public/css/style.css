@@ -52,25 +52,28 @@ header .right {
 -------------------------*/
 
 body>div {
-  -webkit-transition: -webkit-transform .6s cubic-bezier(0.23,1,0.32,1),
-    opacity .6s cubic-bezier(0.23,1,0.32,1);
-  opacity: 0;
-  -webkit-transform: translateX(50%);
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  background-color: white;
 }
 
-.transition-out {
-  -webkit-transform: translateX(-50%);
-  opacity: 0;
+.transition {
+  -webkit-transition: -webkit-transform 1.6s cubic-bezier(0.23,1,0.32,1);
 }
 
-.transition-in {
+.in {
   -webkit-transform: translateX(0%);
- opacity: 1;
+}
+
+.out-left {
+  -webkit-transform: translateX(-20%);
+}
+
+.out-right {
+  -webkit-transform: translateX(100%);
 }
 
 .verses {

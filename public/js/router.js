@@ -21,6 +21,8 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
     },
 
     pageTransition: function (fragment, options) {
+      // Tell the region if we should transition in the next view.
+      App.mainRegion.transitionNext = options.transition;
       this.navigate(fragment, options);
     },
 
