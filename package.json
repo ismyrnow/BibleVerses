@@ -5,7 +5,8 @@
   "main": "server.js",
   "dependencies": {
     "express": "~3.4.4",
-    "request": "~2.27.0"
+    "request": "~2.27.0",
+    "bower": "~1.2.6"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -14,12 +15,16 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "cd public && ../node_modules/bower/bin/bower install"
   },
   "repository": "",
   "author": "@ismyrnow",
   "license": "BSD",
   "readmeFilename": "README.md",
   "gitHead": "149b29d0a29b65cfecafc382f9645a52a4826d39",
-  "private": true
+  "private": true,
+  "engines": {
+    "node": "0.10.x"
+  }
 }
