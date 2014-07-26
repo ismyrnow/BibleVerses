@@ -10,7 +10,8 @@ require.config({
     'marionette' : '../bower_components/marionette/lib/backbone.marionette',
     'handlebars' : '../bower_components/handlebars/handlebars',
     'hbs'        : '../bower_components/requirejs-hbs/hbs',
-    'text'       : '../bower_components/requirejs-text/text'
+    'text'       : '../bower_components/requirejs-text/text',
+    'fastclick'  : '../bower_components/fastclick/lib/fastclick'
   },
   shim : {
     'handlebars' : {
@@ -31,9 +32,11 @@ require.config({
   deps : ['jquery', 'underscore', 'infrastructure/marionette-handlebars', 'infrastructure/marionette-transitions']
 });
 
-require(['backbone', 'marionette', 'router', 'collections/verses-collection'],
-function (Backbone, Marionette, Router, VersesCollection) {
+require(['backbone', 'marionette', 'router', 'collections/verses-collection', 'fastclick'],
+function (Backbone, Marionette, Router, VersesCollection, FastClick) {
   window.App = new Marionette.Application();
+  
+  FastClick.attach(document.body);
 
   App.addRegions({
     mainRegion: 'body'
