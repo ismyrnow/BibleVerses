@@ -61,7 +61,7 @@ body>div {
 }
 
 .transition {
-  -webkit-transition: -webkit-transform 1.6s cubic-bezier(0.23,1,0.32,1);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.23,1,0.32,1);
 }
 
 .in {

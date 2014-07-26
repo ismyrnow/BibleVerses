@@ -30,7 +30,7 @@ function (Handlebars, Marionette, template, debounce, $) {
       };
       
       App.Verses.create(verseModel);
-      window.location.hash = '#';
+      this.transitionTo('#', 'prev');
     },
 
     referenceChanged: function () {

@@ -30,12 +30,12 @@ function (Handlebars, Marionette, template, debounce, $) {
         list: list
       });
 
-      window.location.hash = '#';
+      this.transitionTo('#', 'prev');
     },
 
     deleteVerse: function () {
       this.model.destroy();
-      window.location.hash = '#';
+      this.transitionTo('#', 'prev');
     },
 
     referenceChanged: function () {

@@ -1,5 +1,29 @@
-define(['marionette', 'jquery'], function (Marionette, $) {
+define(['marionette', 'backbone', 'jquery'], function (Marionette, Backbone, $) {
   'use strict';
+  
+  // Handle all anchor clicks if they contain data-transition
+  $(document).on('click', 'a[data-transition]', function (e) {
+    console.log('handle link');
+    var $link = $(e.currentTarget);
+    var transition = $link.data('transition');
+    var href = $link.attr('href').substring(1);
+
+    e.preventDefault();
+
+    Backbone.trigger('page-transition', href, {
+      trigger: true,
+      replace: true,
+      transition: transition
+    });
+  });
+  
+  Backbone.View.prototype.transitionTo = function (href, transition) {    
+    Backbone.trigger('page-transition', href, {
+      trigger: true,
+      replace: true,
+      transition: transition
+    });
+  };
 
   Marionette.Region.prototype.close = function () {
     var view = this.currentView;
