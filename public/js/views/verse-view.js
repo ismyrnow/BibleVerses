@@ -4,7 +4,15 @@ function (Handlebars, Marionette, template) {
 
   return Marionette.ItemView.extend({
 
-    template: template
+    template: template,
+
+    templateHelpers: {
+
+      verseTextToHtml: function () {
+        return this.text.replace(/(\r\n|\n|\r)/gm, '<br>');
+      }
+
+    }
 
   });
 

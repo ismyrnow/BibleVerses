@@ -51,13 +51,20 @@ function extractVerse(json) {
       text: cleanPassageText(passage.text),
       version: passage.version_abbreviation
     };
-  } catch (e) {}
+  } catch (e) {
+    console.error(e);
+  }
 
   return verse;
 }
 
 function cleanPassageText(text) {
-  var result = text.replace(/<sup.*?\/sup>/gi, '');
+  var result = text;
+
+  // Remove superscript text
+  result = result.replace(/<sup.*?\/sup>/gi, '');
+
+  // Remove html tags
   result = result.replace(/<\/?([a-z][a-z0-9]*)\b[^>]*>?/gi, '');
 
   return result;
