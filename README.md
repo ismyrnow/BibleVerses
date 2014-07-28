@@ -22,3 +22,7 @@ bower install
 git push heroku master
 heroku open
 ```
+
+## Credits
+
+Basis for the Bible icon designed by [Bruno Gätjens González](http://www.thenounproject.com/gatjensb) from the [Noun Project](http://www.thenounproject.com).

@@ -37,6 +37,10 @@ function (Backbone, Marionette, Router, VersesCollection, FastClick) {
   window.App = new Marionette.Application();
   
   FastClick.attach(document.body);
+  
+  if (window.navigator.standalone) {
+    $('body').addClass('standalone');
+  }
 
   App.addRegions({
     mainRegion: 'body'
