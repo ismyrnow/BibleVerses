@@ -13,7 +13,7 @@ app.get('/offline.appcache', function (req, res) {
   res.header('Pragma', 'no-cache');
   res.header('Expires', '0');
   res.contentType('text/cache-manifest');
-  res.sendfile('offline.appcache');
+  res.sendfile('public/offline.appcache');
 });
 
 app.use(express.static(__dirname + '/public'));
