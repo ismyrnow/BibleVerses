@@ -1,3 +1,4 @@
+'use strict';
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -6,6 +7,7 @@ module.exports = function(grunt) {
     express: {
       dev: {
         options: {
+          args: ['--nocache'],
           script: './server.js'
         }
       }
@@ -27,6 +29,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', [ 'express:dev', 'watch' ]);
+  grunt.registerTask('default', [ 'express', 'watch' ]);
 
 };

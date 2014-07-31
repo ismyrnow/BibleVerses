@@ -10,8 +10,8 @@ npm install
 
 ## Running
 
-- Run `npm start` for server
-- Run `npm run watch` for server and watch task.
+- Run `npm start` for server.
+- Run `npm run develop` for server and watch task, with AppCache disabled.
 - Open `http://localhost:3000`.
 
 ## Deploying
