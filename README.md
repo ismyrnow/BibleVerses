@@ -1,4 +1,4 @@
-Bible memory verse app, which works offline.
+Bible memory verse app, which works offline using AppCache and LocalStorage.
 
 ![Screenshot](screenshot.png)
 
@@ -6,14 +6,12 @@ Bible memory verse app, which works offline.
 
 ```
 npm install
-cd public
-bower install
 ```
 
 ## Running
 
-- Run `npm start` for server.
-- Run `grunt` for server and watch task.
+- Run `npm start` for server
+- Run `npm run watch` for server and watch task.
 - Open `http://localhost:3000`.
 
 ## Deploying
