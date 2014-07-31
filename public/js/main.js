@@ -32,8 +32,8 @@ require.config({
   deps : ['jquery', 'underscore', 'infrastructure/marionette-handlebars', 'infrastructure/marionette-transitions']
 });
 
-require(['backbone', 'marionette', 'router', 'collections/verses-collection', 'fastclick'],
-function (Backbone, Marionette, Router, VersesCollection, FastClick) {
+require(['backbone', 'marionette', 'router', 'collections/verses-collection', 'fastclick', 'jquery'],
+function (Backbone, Marionette, Router, VersesCollection, FastClick, $) {
   window.App = new Marionette.Application();
   
   FastClick.attach(document.body);
