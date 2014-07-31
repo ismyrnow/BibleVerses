@@ -3,7 +3,6 @@ define(['marionette', 'backbone', 'jquery'], function (Marionette, Backbone, $) 
   
   // Handle all anchor clicks if they contain data-transition
   $(document).on('click', 'a[data-transition]', function (e) {
-    console.log('handle link');
     var $link = $(e.currentTarget);
     var transition = $link.data('transition');
     var href = $link.attr('href').substring(1);
