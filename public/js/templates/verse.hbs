@@ -11,7 +11,9 @@
 <div class="body verse">
   {{{verseTextToHtml}}}
 
-  <div class="form-actions">
-    <a href="javascript:void(0)" id="memorized-verse">Memorized</a>
-  </div>
+  {{#if notMemorized}}
+    <div class="form-actions">
+      <a href="javascript:void(0)" id="memorized-verse">Memorized</a>
+    </div>
+  {{/if}}
 </div>

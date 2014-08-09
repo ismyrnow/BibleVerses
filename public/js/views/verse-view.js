@@ -22,6 +22,10 @@ function (Handlebars, Marionette, template) {
 
       verseTextToHtml: function () {
         return this.text.replace(/(\r\n|\n|\r)/gm, '<br>');
+      },
+
+      notMemorized: function () {
+        return this.list === 'learning';
       }
 
     }
