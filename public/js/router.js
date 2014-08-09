@@ -3,6 +3,8 @@ define(['backbone', 'views/verse-list-view', 'models/verse-list-model', 'collect
 function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, NewVerseView, EditVerseView) {
   'use strict';
 
+  var preResetHash;
+
   return Backbone.Router.extend({
 
     routes: {
@@ -35,10 +37,12 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
     },
 
     learningVerses: function () {
+      preResetHash = window.location.hash;
       this.renderVerseList('learning');
     },
 
     memorizedVerses: function () {
+      preResetHash = window.location.hash;
       this.renderVerseList('memorized');
     },
 
@@ -79,12 +83,12 @@ function (Backbone, VerseListView, VerseListModel, VersesCollection, VerseView, 
       var srsly = window.confirm('Are you sure you want to reset your verses?');
 
       if (!srsly) {
-        window.location.href = '/';
+        window.location.hash = preResetHash;
         return;
       }
 
       require(['infrastructure/fixtures'], function () {
-        window.location.href = '/';
+        window.location.hash = '#';
       });
     }
 
