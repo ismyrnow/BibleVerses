@@ -6,6 +6,18 @@ function (Handlebars, Marionette, template) {
 
     template: template,
 
+    events: {
+      'click #memorized-verse': 'memorizedVerse',
+    },
+
+    memorizedVerse: function () {
+      this.model.save({
+        list: 'memorized'
+      });
+
+      this.transitionTo('#', 'prev');
+    },
+
     templateHelpers: {
 
       verseTextToHtml: function () {
