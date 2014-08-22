@@ -1,5 +1,4 @@
 CACHE MANIFEST
-# 20
 
 CACHE:
 index.html
@@ -49,7 +48,3 @@ bower_components/open-sans-fontface/fonts/Bold/OpenSans-Bold.woff
 
 NETWORK:
 *
-
-FALLBACK:
-# /main.py /static.html
-# images/large/ images/offline.jpg

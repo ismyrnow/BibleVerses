@@ -4,28 +4,14 @@ var express = require('express');
 var util = require('util');
 var request = require('request');
 var argv = require('minimist')(process.argv.slice(2));
+var disableAppCache = argv.nocache === true;
+var appcache = require('./middleware/appcache')('server/offline.appcache', { disable: disableAppCache });
 
 var app = express();
 var apiKey = 'DXYcIp9hDNA2Mw00U7YX9pxIVShJt0l86RFnHxbG';
 var port = process.env.PORT || 3000;
-var disableAppCache = argv.nocache === true;
 
-app.get('/offline.appcache', function (req, res) {
-  if (disableAppCache) {
-    res.send(404);
-    return;
-  }
-  
-  res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
-  res.header('Pragma', 'no-cache');
-  res.header('Expires', '0');
-  res.contentType('text/cache-manifest');
-<<<<<<< HEAD:server.js
-  res.sendfile('public/offline.appcache');
-=======
-  res.sendfile('server/offline.appcache');
->>>>>>> Move server stuff to subdirectory:server/index.js
-});
+app.get('/offline.appcache', appcache);
 
 app.use(express.static(__dirname + '/../public'));
 
