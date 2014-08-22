@@ -2,7 +2,7 @@
   "name": "BibleVerses",
   "version": "0.1.0",
   "description": "Bible memory verse app.",
-  "main": "server.js",
+  "main": "server/index.js",
   "dependencies": {
     "express": "~3.4.4",
     "request": "~2.27.0",
@@ -18,7 +18,7 @@
   "scripts": {
     "develop": "grunt",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node server",
     "postinstall": "node_modules/.bin/bower install --config.interactive=false"
   },
   "repository": "",

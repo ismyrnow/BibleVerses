@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           args: ['--nocache'],
-          script: './server.js'
+          script: './server'
         }
       }
     },

@@ -20,10 +20,14 @@ app.get('/offline.appcache', function (req, res) {
   res.header('Pragma', 'no-cache');
   res.header('Expires', '0');
   res.contentType('text/cache-manifest');
+<<<<<<< HEAD:server.js
   res.sendfile('public/offline.appcache');
+=======
+  res.sendfile('server/offline.appcache');
+>>>>>>> Move server stuff to subdirectory:server/index.js
 });
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/../public'));
 
 app.get('/api/passage', function (req, res) {
   var reference = req.query['reference'];
