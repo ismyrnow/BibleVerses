@@ -35,20 +35,18 @@ define(['marionette', 'backbone', 'jquery'], function (Marionette, Backbone, $) 
     var close = closeView.bind(this, view);
     
     if (this.transitionNext) {
-      var endClass, zIndex;
+      var endCss, zIndex;
       
       // If transitioning back ('prev'), move old view to the right.
       if (this.transitionNext === 'prev') {
-        endClass = 'out-right';
+        endCss = 'translateX(100%)';
         zIndex = 2;
       } else {
-        endClass = 'out-left';
+        endCss = 'translateX(-20%)';
         zIndex = 1;
       }
       
-      $viewEl.addClass('transition')
-        .addClass(endClass)
-        .removeClass('in')
+      $viewEl.css('-webkit-transform', endCss)
         .css('z-index', zIndex);
       
       $viewEl.on('transitionend oTransitionEnd webkitTransitionEnd', close);
@@ -61,29 +59,28 @@ define(['marionette', 'backbone', 'jquery'], function (Marionette, Backbone, $) 
     var $viewEl = $(view.el);
     
     if (this.transitionNext) {
-      var startClass, zIndex;
+      var startCss, zIndex;
       
       // If transitioning back ('prev'), start new view on the left.
       if (this.transitionNext === 'prev') {
-        startClass = 'out-left';
+        startCss = 'translateX(-20%)';
         zIndex = 1;
       } else {
-        startClass = 'out-right';
+        startCss = 'translateX(100%)';
         zIndex = 2;
       }
       
-      $viewEl.addClass('transition')
-        .addClass(startClass)
+      $viewEl.css('-webkit-transform', startCss)
         .css('z-index', zIndex);
       
       this.$el.append($viewEl);
       
       // The timeout ensures the element is appended before the class is added.
       setTimeout(function () {
-        $viewEl.removeClass(startClass).addClass('in');
-      }, 1);
+        $viewEl.css('-webkit-transform', 'translateX(0%)');
+      }, 10);
     } else {
-      $viewEl.addClass('in');
+      $viewEl.css('-webkit-transform', 'translateX(0%)');
       this.$el.append($viewEl);
     }
     
