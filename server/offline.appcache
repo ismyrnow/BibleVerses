@@ -1,7 +1,6 @@
 CACHE MANIFEST
 
 CACHE:
-index.html
 css/style.css
 js/collections/verses-collection.js
 js/infrastructure/debounce.js
@@ -37,10 +36,10 @@ bower_components/requirejs-text/text.js
 bower_components/fastclick/lib/fastclick.js
 bower_components/normalize-css/normalize.css
 bower_components/open-sans-fontface/open-sans.css
-bower_components/open-sans-fontface/fonts/Light/OpenSans-Light.eot
-bower_components/open-sans-fontface/fonts/Light/OpenSans-Light.svg
-bower_components/open-sans-fontface/fonts/Light/OpenSans-Light.ttf
-bower_components/open-sans-fontface/fonts/Light/OpenSans-Light.woff
+bower_components/open-sans-fontface/fonts/Regular/OpenSans-Regular.eot
+bower_components/open-sans-fontface/fonts/Regular/OpenSans-Regular.svg
+bower_components/open-sans-fontface/fonts/Regular/OpenSans-Regular.ttf
+bower_components/open-sans-fontface/fonts/Regular/OpenSans-Regular.woff
 bower_components/open-sans-fontface/fonts/Bold/OpenSans-Bold.eot
 bower_components/open-sans-fontface/fonts/Bold/OpenSans-Bold.svg
 bower_components/open-sans-fontface/fonts/Bold/OpenSans-Bold.ttf
