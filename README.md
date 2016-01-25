@@ -10,13 +10,15 @@ npm install
 
 ## Running
 
+- Run `npm run dev-client` to compile js and css.
 - Run `npm start` for server.
-- Run `npm run develop` for server and watch task, with AppCache disabled.
+- Run `npm run dev-server` for server and watch task, with AppCache disabled.
 - Open `http://localhost:3000`.
 
 ## Deploying
 
 ```
+npm run build-client
 git push heroku master
 heroku open
 ```

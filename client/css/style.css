@@ -1,3 +1,6 @@
+@import (inline) "../bower_components/normalize-css/normalize.css";
+@import "../bower_components/open-sans-fontface/open-sans.less";
+
 * {
   box-sizing: border-box;
 }

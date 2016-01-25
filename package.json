@@ -1,25 +1,39 @@
 {
   "name": "BibleVerses",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Bible memory verse app.",
   "main": "server/index.js",
   "dependencies": {
-    "express": "~3.4.4",
-    "request": "~2.27.0",
+    "backbone": "^1.2.3",
+    "backbone.localstorage": "^1.1.16",
+    "backbone.marionette": "^2.4.4",
+    "backbone.touch": "^0.4.2",
     "bower": "~1.3.8",
-    "minimist": "^0.2.0"
+    "browserify": "^13.0.0",
+    "express": "~3.4.4",
+    "fastclick": "^1.0.6",
+    "handlebars": "^1.3.0",
+    "hbsfy": "^2.4.1",
+    "jquery": "^2.2.0",
+    "less": "^2.5.3",
+    "minimist": "^0.2.0",
+    "request": "~2.27.0",
+    "uglify-js": "^2.6.1",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-express-server": "~0.4.5",
+    "grunt-cli": "^0.1.13",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-cli": "^0.1.13"
+    "grunt-express-server": "~0.4.5"
   },
   "scripts": {
-    "develop": "grunt",
+    "dev-server": "grunt",
+    "dev-client": "lessc client/css/style.css > public/style.css && browserify -t hbsfy client/js/main.js -d > public/app.js",
+    "build-client": "lessc client/css/style.css --clean-css > public/style.css && browserify -t hbsfy client/js/main.js | uglifyjs > public/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
-    "postinstall": "node_modules/.bin/bower install --config.interactive=false"
+    "postinstall": "node_modules/.bin/bower install --config.interactive=false && npm run build-client"
   },
   "repository": "",
   "author": "@ismyrnow",
