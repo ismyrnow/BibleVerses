@@ -33,8 +33,8 @@
   },
   "scripts": {
     "dev-server": "grunt",
-    "dev-client": "lessc client/css/style.css > public/style.css && browserify -t hbsfy client/js/main.js -d > public/app.js",
-    "build-client": "lessc client/css/style.css --clean-css > public/style.css && browserify -t hbsfy client/js/main.js | uglifyjs > public/app.js",
+    "dev-client": "lessc client/css/style.less > public/style.css && browserify -t hbsfy client/js/main.js -d > public/app.js",
+    "build-client": "lessc client/css/style.less --clean-css > public/style.css && browserify -t hbsfy client/js/main.js | uglifyjs > public/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
     "postinstall": "node_modules/.bin/bower install --config.interactive=false && npm run build-client"
