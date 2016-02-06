@@ -59,10 +59,29 @@ function cleanPassageText(text) {
   var result = text;
 
   // Remove superscript text
-  result = result.replace(/<sup.*?\/sup>/gi, '');
+  // Replacing them with a space, since they tend to occur between verses
+  result = result.replace(/<sup.*?\/sup>/gi, ' ');
+
+  // Remove headers
+  result = result.replace(/<h\d.*?\/h\d>/gi, '');
 
   // Remove html tags
   result = result.replace(/<\/?([a-z][a-z0-9]*)\b[^>]*>?/gi, '');
+
+  // Remove double newlines
+  result = result.replace(/\n\n/g, '');
+
+  // Trim space around newlines
+  result = result.replace(/\s+\n\s+/g, '\n');
+
+  // Fix quotes
+  result = result.replace(/“|”/g, '"');
+
+  // Collapse double spaces
+  result = result.replace(/  /g, ' ');
+
+  // Trim whitespace
+  result = result.trim();
 
   return result;
 }
