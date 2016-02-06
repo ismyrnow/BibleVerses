@@ -2,6 +2,9 @@
   "name": "BibleVerses",
   "version": "1.0.0",
   "description": "Bible memory verse app.",
+  "engines": {
+    "node": "4.1.1"
+  },
   "main": "server/index.js",
   "dependencies": {
     "backbone": "^1.2.3",
@@ -41,8 +44,5 @@
   "license": "BSD",
   "readmeFilename": "README.md",
   "gitHead": "149b29d0a29b65cfecafc382f9645a52a4826d39",
-  "private": true,
-  "engines": {
-    "node": "0.10.x"
-  }
+  "private": true
 }
