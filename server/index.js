@@ -1,7 +1,6 @@
 'use strict';
 
 var express = require('express');
-var util = require('util');
 var request = require('request');
 var argv = require('minimist')(process.argv.slice(2));
 var disableAppCache = argv.nocache === true;
@@ -19,12 +18,11 @@ app.get('/api/passage', function (req, res) {
   var reference = req.query['reference'];
   var version = req.query['version'].toUpperCase();
 
-  var url = util.format('https://%s:X@bibles.org/v2/eng-%s/passages.js?q[]=%s',
-    apiKey, version, reference);
+  var url = `https://${apiKey}:X@bibles.org/v2/eng-${version}/passages.js?q[]=${reference}`;
 
-  request(url, function (error, response, body) {
+  request({ url: url, json: true }, function (error, response, body) {
     if (!error && response.statusCode === 200) {
-      var passage = extractVerse(JSON.parse(body));
+      var passage = extractVerse(body);
 
       if (passage) {
         res.writeHead(200, {'Content-Type': 'application/javascript'});
